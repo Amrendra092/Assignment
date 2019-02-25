@@ -1,7 +1,7 @@
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Ques3 {
+public class Ques5 {
 
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
@@ -21,17 +21,25 @@ public class Ques3 {
             executorService.submit(new Runnable() {
                 @Override
                 public void run() {
-                    System.out.println("Thread 3");
+                    try {
+                        Thread.sleep(3000L);
+                        System.out.println("Thread 3");
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
+
+                }
             });
         } finally {
             executorService.shutdown();
         }
         try {
-            Thread.sleep(2000l);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println(executorService.isShutdown());
+        System.out.println(executorService.isTerminated());
         System.out.println("End");
     }
 }
