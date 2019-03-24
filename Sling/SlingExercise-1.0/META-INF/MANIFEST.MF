@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Content-Package-Roots: /apps/sightly-exercise,/content/sightly-exercis
+ e
+Content-Package-Type: mixed
+Content-Package-Id: :SlingExercise:1.0
+
